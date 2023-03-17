@@ -50,7 +50,7 @@ function App() {
         <button onClick={searchPokemon}> Search Pokemon</button>
       </div>
       <div className="DisplaySection">{!pokemonChosen ? 
-      (<h1> Choose a pokemon by Name or Number</h1>) :
+      (<h1> Choose a pokemon</h1>) :
       (
       <> 
       <h1>{pokemon.Name}</h1>
