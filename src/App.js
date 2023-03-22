@@ -4,10 +4,9 @@ import './App.css';
 import { useState } from "react"
 import Axios from "axios"
 
-//"https://pokeapi.co/api/v2/pokemon?limit=150&offset=0"
 
 function App() {
-  const [pokemonName, setPokemonName] = useState('');
+  const [pokemonName, setPokemonName] = useState();
   const [pokemonChosen,setPokemonChosen]= useState(false)
   const [pokemon, setPokemon] = useState({
     Name: "",
@@ -32,7 +31,7 @@ function App() {
         Defense: response.data.stats[2].base_stat
       });
       setPokemonChosen(true)
-      console.log(response) 
+      
     })
   }
 
@@ -50,7 +49,8 @@ function App() {
         <button onClick={searchPokemon}> Search Pokemon</button>
       </div>
       <div className="DisplaySection">{!pokemonChosen ? 
-      (<h1> Choose a pokemon By Name or Number</h1>) :
+      (<h1> Choose a pokemon <br/>
+        By Name or Number</h1>) :
       (
       <> 
       <h1>{pokemon.Name}</h1>
